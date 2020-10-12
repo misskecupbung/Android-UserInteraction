@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edit_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:inputType="phone"
+        android:hint="@string/no_telp"
+        android:imeOptions="actionNext"
+        android:layout_toLeftOf="@+id/spinner_label"/>
+    <!--toLeftOf untuk meletakkan edit text disebelah kirinya spinner-->
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_label"
+        android:layout_toLeftOf="@+id/button_show"/>
+    <!--LeftOf untuk sebelah kirinya button-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_show"
+        android:layout_alignParentRight="true"
+        android:onClick="showText"
+        android:text="SHOW"/>
+    <!--align parent right untuk button diletakkan sebelah kanan-->
+
+    <!--membuat radio button-->
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/edit_input"
+        android:layout_marginTop="12dp"
+        >
+        <RadioButton
+            android:id="@+id/radio_p1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Sate"/>
+        <RadioButton
+            android:id="@+id/radio_p2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Gudeg"/>
+        <RadioButton
+            android:id="@+id/radio_p3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Soto"/>
+    </RadioGroup>
+
+    <!--button untuk menampilkan alert-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radio_group"
+        android:layout_marginTop="12dp"
+        android:text="Alert"
+        android:onClick="showAlert"
+        />
+
+    <TextView
+        android:id="@+id/textPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textStyle="bold"
+        android:text="Phone Number: "/>
+
+</RelativeLayout>
